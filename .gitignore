@@ -2,3 +2,5 @@
 *.iml
 __pycache__
 venv
+meetings/migrations
+db.sqlite3
