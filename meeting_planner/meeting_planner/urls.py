@@ -15,15 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 from website.views import welcome
 from website.views import date
 from website.views import about
-from meetings.views import detail
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', welcome),
-    path('date', date),
-    path('about', about),
-    path('meetings/<int:id>', detail),
+    path('', welcome, name='welcome'),
+    path('date', date, name='date'),
+    path('about', about, name='about'),
+    path('meetings/', include('meetings.urls')),
 ]
